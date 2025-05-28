@@ -1,0 +1,7 @@
+[package]
+name = "immutable-grid"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+generic-array = "1.2.0"
