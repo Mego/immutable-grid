@@ -52,8 +52,8 @@ impl From<Direction> for (isize, isize) {
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Position {
-    coordinate: Coordinate,
-    direction: Direction,
+    pub coordinate: Coordinate,
+    pub direction: Direction,
 }
 
 impl Position {
