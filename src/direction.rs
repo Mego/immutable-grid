@@ -37,6 +37,17 @@ impl Direction {
             Direction::Up => Direction::Down,
         }
     }
+
+    pub const fn is_vertical(&self) -> bool {
+        match self {
+            Direction::Down | Direction::Up => true,
+            _ => false,
+        }
+    }
+
+    pub const fn is_horizontal(&self) -> bool {
+        !self.is_vertical()
+    }
 }
 
 impl From<Direction> for (isize, isize) {
