@@ -7,7 +7,10 @@ use generic_array::{
     typenum::{Const, Sum},
 };
 
-use crate::iter::{GridColIter, GridRowIter};
+use crate::{
+    coordinate::Coordinate,
+    iter::{GridColIter, GridRowIter},
+};
 
 #[derive(Clone, Copy, PartialEq, Eq)]
 pub struct ImmutableGrid<T, N: ArrayLength>
@@ -99,6 +102,10 @@ where
             }
         }
         None
+    }
+
+    pub fn get_coord(&self, coord: Coordinate) -> Option<&T> {
+        self.get(coord.row, coord.col)
     }
 
     pub const fn size(&self) -> (usize, usize) {
